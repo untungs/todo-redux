@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import Toolbar from './components/Toolbar'
-import ConnectedTodoList from './containers/ConnectedTodoList'
+import FilterGroup from './components/FilterGroup'
+import VisibleTodoList from './containers/VisibleTodoList'
 import AddTodo from './containers/AddTodo'
 
 class Root extends Component {
@@ -10,7 +11,8 @@ class Root extends Component {
       <View style={styles.container}>
         <Toolbar title="Todo Redux" />
         <AddTodo />
-        <ConnectedTodoList />
+        <FilterGroup />
+        <VisibleTodoList />
       </View>
     )
   }
