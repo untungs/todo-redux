@@ -13,16 +13,22 @@ class AddTodo extends Component {
     this.setState({ text })
   }
 
+  onAddButtonClicked = () => {
+    console.log(this.state.text)
+    this.setState({ text: '' })
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <TextInput 
-          style={styles.inputStyle} 
+          style={styles.inputStyle}
+          value={this.state.text}
           onChangeText={this.onTextChanged}
         />
         <Button 
           title="Add"
-          onPress={() => { console.log(this.state.text) }}
+          onPress={this.onAddButtonClicked}
         />
       </View>
     )
