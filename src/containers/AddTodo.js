@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { View, TextInput, Button, StyleSheet} from 'react-native'
+import { connect } from 'react-redux';
+import { addTodo } from '../redux/actions';
 
 class AddTodo extends Component {
   constructor() {
@@ -14,8 +16,10 @@ class AddTodo extends Component {
   }
 
   onAddButtonClicked = () => {
-    console.log(this.state.text)
-    this.setState({ text: '' })
+    if (this.state.text) {
+      this.props.dispatch(addTodo(this.state.text))
+      this.setState({ text: '' })
+    }
   }
 
   render() {
@@ -47,4 +51,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default AddTodo
+export default connect()(AddTodo)
