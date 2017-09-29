@@ -1,15 +1,33 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { View, TextInput, Button, StyleSheet} from 'react-native'
 
-const AddTodo = () => (
-  <View style={styles.container}>
-    <TextInput style={styles.inputStyle} />
-    <Button 
-      title="Add"
-      onPress={() => {}}
-    />
-  </View>
-)
+class AddTodo extends Component {
+  constructor() {
+    super()
+    this.state = {
+      text: ''
+    }
+  }
+
+  onTextChanged = text => {
+    this.setState({ text })
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <TextInput 
+          style={styles.inputStyle} 
+          onChangeText={this.onTextChanged}
+        />
+        <Button 
+          title="Add"
+          onPress={() => { console.log(this.state.text) }}
+        />
+      </View>
+    )
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
