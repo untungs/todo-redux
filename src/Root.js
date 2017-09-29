@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { connect } from 'react-redux';
 import Toolbar from './components/Toolbar'
-import TodoList from './components/TodoList'
+import ConnectedTodoList from './containers/ConnectedTodoList'
 import AddTodo from './containers/AddTodo'
 
 class Root extends Component {
@@ -11,9 +10,7 @@ class Root extends Component {
       <View style={styles.container}>
         <Toolbar title="Todo Redux" />
         <AddTodo />
-        <TodoList
-          todos={this.props.todos}
-        />
+        <ConnectedTodoList />
       </View>
     )
   }
@@ -31,8 +28,4 @@ const styles = StyleSheet.create({
   },
 })
 
-const mapStateToProps = state => ({
-  todos: state.todos
-})
-
-export default connect(mapStateToProps)(Root)
+export default Root

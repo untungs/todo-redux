@@ -1,17 +1,24 @@
 import React from 'react'
-import { Text, StyleSheet } from 'react-native'
+import { Text, TouchableOpacity, StyleSheet } from 'react-native'
 
-const Todo = ({ text }) => (
-  <Text style={styles.container}>
+const Todo = ({ text, completed, onClick }) => (
+  <Text
+    onPress={onClick}
+    style={[
+      styles.container,
+      {
+        color: completed ? 'grey' : 'black',
+        textDecorationLine: completed ? 'line-through' : 'none'
+      }
+    ]}
+  >
     {text}
   </Text>
 )
 
 const styles = StyleSheet.create({
   container: {
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#efefef'
+    padding: 16
   }
 })
 
