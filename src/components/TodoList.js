@@ -9,7 +9,8 @@ class TodoList extends Component {
     <Todo
       text={item.text}
       completed={item.completed}
-      onClick={() => { this.props.onTodoClick(item.id) }}
+      onClick={() => this.props.onTodoClick(item.id)}
+      onRemoveTodoClick={() => this.props.onRemoveTodoClick(item.id)}
     />
   )
 
