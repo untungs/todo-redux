@@ -1,10 +1,12 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { Text, TouchableOpacity, StyleSheet } from 'react-native'
 
 const Todo = ({ text, completed, onClick, onRemoveTodoClick }) => (
-  <View style={styles.container}>
+  <TouchableOpacity
+    onPress={onClick}
+    style={styles.container}
+  >
     <Text
-      onPress={onClick}
       style={{
         flex: 1,
         color: completed ? 'grey' : 'black',
@@ -19,7 +21,7 @@ const Todo = ({ text, completed, onClick, onRemoveTodoClick }) => (
     >
       <Text style={{ color: 'grey' }}>x</Text>
     </TouchableOpacity>
-  </View>
+  </TouchableOpacity>
 )
 
 const styles = StyleSheet.create({

@@ -13,9 +13,29 @@ const getVisibleTodos = (todos, filter) => {
   }
 }
 
-const mapStateToProps = state => ({
-  todos: getVisibleTodos(state.todos, state.visibilityFilter)  
-})
+const getEmptyStateText = (todos, filter) => {
+  if (todos.length > 0) {
+    return ''
+  }
+
+  switch (filter) {
+    case 'SHOW_ALL':
+      return 'Have something to do later? List \'em down here.'
+    case 'SHOW_COMPLETED':
+      return 'Tap a todo to mark it as completed.'
+    case 'SHOW_ACTIVE':
+      return 'Nothing todo here 🚀'
+  }
+}
+
+const mapStateToProps = state => {
+  const todos = getVisibleTodos(state.todos, state.visibilityFilter)
+  const emptyStateText = getEmptyStateText(todos, state.visibilityFilter)
+  return {
+    todos,
+    emptyStateText
+  }
+}
 
 const mapDispatchToProps = dispatch => {
   return {

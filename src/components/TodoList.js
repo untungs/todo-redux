@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, FlatList, StyleSheet } from 'react-native'
+import { View, Text, FlatList, StyleSheet } from 'react-native'
 import Todo from './Todo'
 
 class TodoList extends Component {
@@ -19,17 +19,40 @@ class TodoList extends Component {
   )
 
   render() {
-    const todos = this.props.todos
+    const { todos, emptyStateText } = this.props
 
     return (
-      <FlatList
-        data={todos}
-        renderItem={this.renderTodo}
-        keyExtractor={this.keyExtractor}
-        ItemSeparatorComponent={this.renderSeparator}
-      />
+      <View style={styles.container}>
+        <FlatList
+          data={todos}
+          renderItem={this.renderTodo}
+          keyExtractor={this.keyExtractor}
+          ItemSeparatorComponent={this.renderSeparator}
+        />
+        <View
+          style={[
+            styles.emptyStateStyle,
+            { display: emptyStateText ? 'flex' : 'none' }
+          ]}
+        >
+          <Text style={{ color: 'grey' }}>
+            {emptyStateText}
+          </Text>
+        </View>
+      </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
+  emptyStateStyle: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+})
 
 export default TodoList
