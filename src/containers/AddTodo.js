@@ -29,6 +29,7 @@ class AddTodo extends Component {
           style={styles.inputStyle}
           value={this.state.text}
           onChangeText={this.onTextChanged}
+          placeholder="I want to..."
         />
         <Button 
           title="Add"
