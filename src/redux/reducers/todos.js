@@ -4,7 +4,7 @@ const todos = (state = [], action) => {
       return [
         ...state,
         {
-          id: action.id,
+          id: getNextId(state),
           text: action.text,
           completed: false
         }
@@ -20,6 +20,16 @@ const todos = (state = [], action) => {
     default:
       return state
   }
+}
+
+const getNextId = todos => {
+  if (todos.length == 0) {
+    return 0
+  }
+
+  return todos.reduce((lastTodo, todo) =>
+    todo.id > lastTodo.id ? todo : lastTodo
+  ).id + 1
 }
 
 export default todos
