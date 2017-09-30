@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, KeyboardAvoidingView, StyleSheet } from 'react-native'
 import Toolbar from './components/Toolbar'
 import FilterGroup from './components/FilterGroup'
 import VisibleTodoList from './containers/VisibleTodoList'
@@ -10,9 +10,11 @@ class Root extends Component {
     return (
       <View style={styles.container}>
         <Toolbar title="Todo Redux" />
-        <AddTodo />
         <FilterGroup />
         <VisibleTodoList />
+        <KeyboardAvoidingView behavior="padding">
+          <AddTodo />
+        </KeyboardAvoidingView>
       </View>
     )
   }
