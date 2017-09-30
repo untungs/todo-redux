@@ -13,7 +13,10 @@ const Todo = ({ text, completed, onClick, onRemoveTodoClick }) => (
     >
       {text}
     </Text>
-    <TouchableOpacity onPress={onRemoveTodoClick}>
+    <TouchableOpacity
+      onPress={onRemoveTodoClick}
+      hitSlop={{ top: 8, left: 8, bottom: 8, right: 8 }}
+    >
       <Text style={{ color: 'grey' }}>x</Text>
     </TouchableOpacity>
   </View>
