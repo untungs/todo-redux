@@ -1,9 +1,10 @@
 # Todo Redux
 
-This project is based on the example in the official Redux documentation (http://redux.js.org/).
+This project is based on the example in the official Redux documentation http://redux.js.org/
 
-<img src="https://raw.githubusercontent.com/untungs/todo-redux/master/art/android.png" height="480">
-<img src="https://raw.githubusercontent.com/untungs/todo-redux/master/art/ios.png" height="480">
+Android & iOS Preview
+
+<img src="https://raw.githubusercontent.com/untungs/todo-redux/master/art/android.png" height="480"> <img src="https://raw.githubusercontent.com/untungs/todo-redux/master/art/ios.png" height="480">
 
 ## Features
 
