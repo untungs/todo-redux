@@ -22,6 +22,11 @@ Android & iOS Preview
 - [redux-logger](https://github.com/evgenyrodionov/redux-logger): log all dispatched action for easier debugging
 - [redux-persist](https://github.com/rt2zz/redux-persist): persist (save and load) app's state across app launches
 
+## Todo
+
+- Add [Flowtype](https://flow.org)
+- Apply [Prettier](https://github.com/prettier/prettier)
+
 ## Create React Native App
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app). You don't have to install Android SDK nor Xcode. Just write your app in JavaScript.
