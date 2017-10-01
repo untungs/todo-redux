@@ -1,10 +1,6 @@
-# Todo Redux
-
 This project is based on the example in the official Redux documentation http://redux.js.org/
 
 Slides: https://speakerdeck.com/untungs/building-react-native-app-with-redux-binar-connect-number-3-2017
-
-Android & iOS Preview
 
 <img src="https://raw.githubusercontent.com/untungs/todo-redux/master/art/android.png" height="480"> <img src="https://raw.githubusercontent.com/untungs/todo-redux/master/art/ios.png" height="480">
 
